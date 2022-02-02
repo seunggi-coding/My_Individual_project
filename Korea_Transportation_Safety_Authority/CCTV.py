@@ -1,1 +1,2 @@
-print("hi, I'm CCTV")
+from functions import function1
+
