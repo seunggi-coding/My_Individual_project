@@ -41,15 +41,18 @@ def Traffic_Signs():
             if fine_dust >= 0 and fine_dust <= 80:
                 print("현재 미세먼지의 양은 {}㎍/㎥ 단계로 좋음 ~ 보통 단계입니다.".format(fine_dust))
                 print("{}번 혹은 {}번 CCTV 위치에 사고가 발생했을 가능성이 있습니다.".format(acc_location+2, acc_location+1))
-                print("또한 도로 내에 정체되어 있는 부분은 있으므로 사고 예방을 위해 서행해주시고, 전방주시 부탁드립니다.")
+                Report()
+                print("도로 내에 정체되어 있는 부분은 있으므로 사고 예방을 위해 서행해주시고, 전방주시 부탁드립니다.")
             elif fine_dust >= 81 and fine_dust <= 150:
                 print("현재 미세먼지의 양은 {}㎍/㎥ 단계로 나쁨 단계입니다.".format(fine_dust))
                 print("{}번 혹은 {}번 CCTV 위치에 사고가 발생했을 가능성이 있습니다.".format(acc_location+2, acc_location+1))
-                print("또한 도로 내에 정체되어 있는 부분은 있으므로 사고 예방을 위해 서행해주시고, 전방주시 부탁드립니다.")
+                Report()
+                print("도로 내에 정체되어 있는 부분은 있으므로 사고 예방을 위해 서행해주시고, 전방주시 부탁드립니다.")
             else:
                 print("현재 미세먼지의 양은 {}㎍/㎥ 단계로 매우나쁨 단계입니다.".format(fine_dust))
                 print("{}번 혹은 {}번 CCTV 위치에 사고가 발생했을 가능성이 있습니다.".format(acc_location+2, acc_location+1))
-                print("또한 도로 내에 정체되어 있는 부분은 있으므로 사고 예방을 위해 서행해주시고, 전방주시 부탁드립니다.")
+                Report()
+                print("도로 내에 정체되어 있는 부분은 있으므로 사고 예방을 위해 서행해주시고, 전방주시 부탁드립니다.")
 
     elif Accident_Scene() == 1:
         if fine_dust >= 0 and fine_dust <= 80:
