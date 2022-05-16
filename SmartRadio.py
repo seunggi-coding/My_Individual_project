@@ -8,6 +8,12 @@ Bluetooth = 0        # 블루투스 연결O : 1, 블루투스 연결X : 0
 Camera = 0           # 카메라 연결O : 1, 카메라 연결X : 0
 Manual = 0           # 수동으로 연결O : 1, 수동으로 연결X : 0
 Emergency_Bell = 0   # 비상벨 연결O : 1, 비상벨 연결X : 0
+Latitude = 0         # 위도, -90 <= 위도 <= 90
+Longitude = 0        # 경도, -180 <= 경도 <= 180
 
 while 1:
-    if 
+    if Bluetooth == 0 and Manual == 0:
+        Camera = 0
+        print("카메라가 꺼져있습니다.\n")
+                
+        
