@@ -12,13 +12,14 @@ Latitude = 0         # 위도, -90 <= 위도 <= 90
 Longitude = 0        # 경도, -180 <= 경도 <= 180
 Q_Bluetooth = 0
 Q_Manual = 0
+Q_Bell = 0
 status = 0           # 0: 카메라의 연결 상태, 1: 비상벨의 호출 상태
 
 while 1:
     if status == 0:
         while 1:
             Q_Bluetooth = input("Bluetooth 연결이 되어 있습니까? ")
-            if Q_Bluetooth == "y" or Q_Bluetooth == "on":
+            if Q_Bluetooth == "y" or Q_Bluetooth == "Y":
                 Bluetooth = 1
                 Manual = 0
                 Camera = 1
@@ -26,7 +27,7 @@ while 1:
                 status = 1
                 break
     
-            elif Q_Bluetooth == "n" or Q_Bluetooth == "off":
+            elif Q_Bluetooth == "n" or Q_Bluetooth == "N":
                 Bluetooth = 0
                 Manual = 0
                 Camera = 0
@@ -35,14 +36,14 @@ while 1:
         
                 while 1:
                     Q_Manual = input("수동으로 작동시키겠습니까? ")
-                    if Q_Manual == "y" or Q_Manual == "turn on":
+                    if Q_Manual == "y" or Q_Manual == "Y":
                         Manual = 1
                         Camera = 1
                         print("카메라가 켜졌습니다.\n")
                         status = 1
                         break
         
-                    elif Q_Manual == "n" or Q_Manual == "turn off":
+                    elif Q_Manual == "n" or Q_Manual == "N":
                         Manual = 0
                         Camera = 0
                         print("카메라가 꺼졌습니다.\n")
@@ -63,5 +64,11 @@ while 1:
             break
         
     elif status == 1:
-        print(status)
-        break
+        while 1:
+            Q_Bell == input("근처에서 비상벨이 호출되었습니까? ")
+            if Q_Bell == "y" or Q_Bell == "Y":
+                df = Q_Bell
+            elif Q_Bell == "n" or Q_Bell == "N"
+                df
+                
+            break
