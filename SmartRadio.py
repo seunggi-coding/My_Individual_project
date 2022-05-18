@@ -14,48 +14,53 @@ Q_Bluetooth = 0
 Q_Manual = 0
 status = 0           # 0: 카메라의 연결 상태, 1: 비상벨의 호출 상태
 
-if status == 0:
-    break
-    while 1:
-        Q_Bluetooth = input("Bluetooth 연결이 되어 있습니까? ")
-        if Q_Bluetooth == "y" or Q_Bluetooth == "on":
-            Bluetooth = 1
-            Manual = 0
-            Camera = 1
-            print("카메라가 켜져있습니다.\n")
-            status = 1
+while 1:
+    if status == 0:
+        while 1:
+            Q_Bluetooth = input("Bluetooth 연결이 되어 있습니까? ")
+            if Q_Bluetooth == "y" or Q_Bluetooth == "on":
+                Bluetooth = 1
+                Manual = 0
+                Camera = 1
+                print("카메라가 켜져있습니다.\n")
+                status = 1
+                break
     
-        elif Q_Bluetooth == "n" or Q_Bluetooth == "off":
-            Bluetooth = 0
-            Manual = 0
-            Camera = 0
-            print("카메라가 꺼져있습니다.\n")
-            status = 1
+            elif Q_Bluetooth == "n" or Q_Bluetooth == "off":
+                Bluetooth = 0
+                Manual = 0
+                Camera = 0
+                print("카메라가 꺼져있습니다.\n")
+                status = 1
         
-            while 1:
-                Q_Manual = input("수동으로 작동시키겠습니까? ")
-                if Q_Manual == "y" or Q_Bluetooth == "on":
-                    Manual = 1
-                    Camera = 1
-                    print("카메라가 켜졌습니다.\n")
-                    status = 1
+                while 1:
+                    Q_Manual = input("수동으로 작동시키겠습니까? ")
+                    if Q_Manual == "y" or Q_Manual == "turn on":
+                        Manual = 1
+                        Camera = 1
+                        print("카메라가 켜졌습니다.\n")
+                        status = 1
+                        break
         
-                elif Q_Manual == "n" or Q_Manual == "off":
-                    Manual = 0
-                    Camera = 0
-                    print("카메라가 꺼졌습니다.\n")
-                    status = 1
+                    elif Q_Manual == "n" or Q_Manual == "turn off":
+                        Manual = 0
+                        Camera = 0
+                        print("카메라가 꺼졌습니다.\n")
+                        status = 1
+                        break
             
-                else:
-                    Bluetooth = 0
-                    Manual = 0
-                    Camera = 0
-                    print("다시 입력해주시기 바랍니다.\n")
-        else:
-            Bluetooth = 0
-            Manual = 0
-            Camera = 0
-            print("다시 입력해주시기 바랍니다.\n")
+                    else:
+                        Bluetooth = 0
+                        Manual = 0
+                        Camera = 0
+                        print("다시 입력해주시기 바랍니다.\n")
+            else:
+                Bluetooth = 0
+                Manual = 0
+                Camera = 0
+                print("다시 입력해주시기 바랍니다.\n")
+            
+            break
         
-elif status == 1:
-    dfsdf = None
+    elif status == 1:
+        dfsdf = None
