@@ -63,4 +63,5 @@ while 1:
             break
         
     elif status == 1:
-        dfsdf = None
+        print(status)
+        break
