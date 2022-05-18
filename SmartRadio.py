@@ -15,13 +15,26 @@ Q_Manual = 0
 
 while 1:
     Q_Bluetooth = input("Bluetooth 연결이 되어 있습니까? ")
-    if 
-    if Bluetooth == 0 and Manual == 0:
-        Camera = 0
-        print("카메라가 꺼져있습니다.\n")
-    
-    elif Bluetooth == 1 and Manual == 1:
+    if Q_Bluetooth == "y" or Q_Bluetooth == "Y":
+        Bluetooth = 1
+        Manual = 0
         Camera = 1
         print("카메라가 켜져있습니다.\n")
+    
+    elif Q_Bluetooth == "n" or Q_Bluetooth == "N":
+        Bluetooth = 0
+        Manual = 0
+        Camera = 0
+        print("카메라가 꺼져있습니다.\n")
+        while 1:
+            Q_Manual = input("수동으로 작동시키겠습니까? ")
+            if Q_Manual == "y" or Q_Bluetooth == "Y":
+                Manual = 1
+                Camera = 1
+                print("카메라가 켜져있습니다.\n")
+            elif Q_Manual == "n" or Q_Manual == "N":
+                Manual = 0
+                Camera = 0
+                print("카메라가 꺼져있습니다.\n")
                 
         
