@@ -3,7 +3,6 @@
 # 3. 근처에 가까운 비상벨과 통신하여 각각의 디바이스에서 일정 반경내의 벨이 울린다면 위치를 파악하고 파출소 센터로 전송한다.
 # 4. 무전기에 달려있는 카메라를 통해 바디캠의 역할을 할 수 있다.
 # 4-2. 평상시에 절전모드에 있다가 순찰차와 블루투스 연결이 되었을 때, 스스로 on/off도 버튼을 통해 가능
-import random
 
 Bluetooth = 0        # 블루투스 연결O : 1, 블루투스 연결X : 0
 Camera = 0           # 카메라 연결O : 1, 카메라 연결X : 0
@@ -15,11 +14,9 @@ Q_Bluetooth = 0
 Q_Manual = 0
 Q_Bell = 0
 Q_Car = 0
-status = 0           # 0: 카메라의 연결 상태, 1: 비상벨의 호출 상태
+status = 1           # 0: 카메라의 연결 상태, 1: 비상벨의 호출 상태
 
 while 1:
-    status = random.randrange(0, 2)
-    
     if status == 0:
         while 1:
             Q_Bluetooth = input("Bluetooth 연결 되었습니까? ")
@@ -73,14 +70,19 @@ while 1:
                 if Q_Car == "y" or Q_Car == "Y":
                     print("비상벨 호출 장소로 이동중입니다.\n")
                     status = 0
-                    break
+
                 elif Q_Car == "n" or Q_Car == "N":
                     print("비상벨 호출 장소로 이동중입니다.\n")
                     status = 0
-                    break
                 
             elif Q_Bell == "n" or Q_Bell == "N":
                 print("관할 구역을 순찰중입니다.\n")
                 print("접수된 신고를 우선 처리합니다.\n")
-                
-        break
+                break
+            
+            else:
+                Bluetooth = 0
+                Manual = 0
+                Camera = 0
+                print("다시 입력해주시기 바랍니다.\n")
+            break
